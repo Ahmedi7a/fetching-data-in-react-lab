@@ -9,6 +9,7 @@ import * as starshipsService from './services/starshipService'
 const App = () => {
 
   const [starships, serStarships] = useState([])
+  const [search, setSearch]= useState('')
 
   // were taking the data from api and store it in starships
   async function fetchData() {
@@ -20,11 +21,16 @@ const App = () => {
     fetchData();
   }, [])
 
+  //need function to grab data from startshiplist
+  function handleSearch(formData){
+      setSearch(formData) //store the passing content
+  }
+
   return (
     <>
-      <h1>Hello world!</h1>
-      <StarshipSearch />
-      <StarshipList starships={starships} />
+      <h1>Star Wars API!</h1>
+      <StarshipSearch handleSearch={handleSearch}/>
+      <StarshipList starships={starships} search={search} />
     </>
   );
 }
