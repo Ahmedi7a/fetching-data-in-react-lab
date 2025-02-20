@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from 'react'
+// import './App.css'
+import StarshipList from './components/StarshipList';
+import StarshipSearch from './components/StarshipSearch';
+import * as starshipsService from './services/starshipService'
+// src/App.jsx
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+
+  const [starships, serStarships] = useState([])
+
+  // were taking the data from api and store it in starships
+  async function fetchData() {
+    const data = await starshipsService.index()
+    serStarships(data.results) //.results is somthing from this api to show only api
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [])
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Hello world!</h1>
+      <StarshipSearch />
+      <StarshipList starships={starships} />
     </>
-  )
+  );
 }
 
 export default App
