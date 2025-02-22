@@ -66,3 +66,67 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.starship-card {
+  background-color: #1a1a1a;
+  color: white;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 300px;
+  text-align: center;
+  margin: 10px;
+  border: 1px solid #01055d;
+}
+.starship-search-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.starship-search-form label {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.starship-search-form input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #1e25b9;
+  border-radius: 6px;
+  background-color: #242424;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+.starship-search-form button {
+  padding: 8px 14px;
+  background-color: #02087a;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.starship-results-count {
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #1a1a1a;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #040a88;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+

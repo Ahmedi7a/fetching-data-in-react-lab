@@ -16,7 +16,7 @@ function StarshipSearch (props){
 
     return(
         <>
-        <form onSubmit={handleSubmit}>
+        <form className="starship-search-form" onSubmit={handleSubmit}>
             <label htmlFor="">Search for starship: </label>
             <input 
             type="text"

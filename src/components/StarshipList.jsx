@@ -9,7 +9,8 @@ function StarshipList(props) {
         display = <div> <StarshipCard starship={filteredArr[0]}/></div>
     } else {
         display = <div>
-            <p>Number of results: {props.starships.length}</p>
+            <p className="starship-results-count">Number of results: {props.starships.length}</p>
+            <hr />
             {props.starships.map((starship) => (
                 <StarshipCard starship={starship} />
             ))}
